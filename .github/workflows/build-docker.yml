@@ -49,6 +49,9 @@ jobs:
             ${{ env.REGISTRY_NAME }}/${{ env.REPO_NAME }}:latest
           build-args: |
             SOFTETHER_GIT_TAG=v${{ matrix.config.git_tag }}
+        env:
+          DOCKER_BUILD_SUMMARY: false
+          DOCKER_BUILD_RECORD_UPLOAD: false
 
       - name: Clear
         if: always()
